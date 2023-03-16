@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity(), NavigationInterface {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d("LIFE_CYCLE", "MainActivity 1 onCreate")
-        openFragment1()
     }
 
     override fun onPause() {
@@ -28,20 +27,6 @@ class MainActivity : AppCompatActivity(), NavigationInterface {
         Log.d("LIFE_CYCLE", "MainActivity 1 onDestroy")
     }
 
-    override fun openFragment1() {
-        val transaction = supportFragmentManager.beginTransaction()
-        val fragment1 = Fragment1()
+    app://laba4/fragment2
 
-        transaction.add(R.id.fragment_container, fragment1, fragment1.javaClass.simpleName)
-        transaction.commit()
-    }
-
-    override fun openFragment2() {
-        val transaction = supportFragmentManager.beginTransaction()
-        val fragment2 = Fragment2()
-
-        transaction.replace(R.id.fragment_container, fragment2, fragment2.javaClass.simpleName)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
 }

@@ -7,20 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragments_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="500dp" >
-
-
-        <ImageView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"/>
-
-    </FrameLayout>
-
+        android:layout_height="400dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_graph" />
 
     <TextView
         android:layout_width="wrap_content"

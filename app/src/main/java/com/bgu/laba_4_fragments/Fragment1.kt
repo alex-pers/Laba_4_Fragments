@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 class Fragment1 : Fragment() {
 
@@ -35,7 +36,7 @@ class Fragment1 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_next).setOnClickListener {
-            (activity as? NavigationInterface)?.openFragment2()
+            findNavController().navigate(R.id.to_fragment2)
         }
     }
 
