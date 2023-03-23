@@ -1,26 +1,19 @@
 package com.bgu.laba_4_fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 
-class Fragment2 : Fragment() {
+class ContactDescriptionFragment : Fragment() {
 
-    override fun onAttach(activity: Context) {
-        super.onAttach(activity)
-        Log.d("LIFE_CYCLE", "Fragment 2 onAttach")
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("LIFE_CYCLE", "Fragment 2 onCreate")
-    }
+    val args: ContactDescriptionFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,30 +21,18 @@ class Fragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        Log.d("LIFE_CYCLE", "Fragment 2 onCreateView")
         return inflater.inflate(R.layout.fragment_2, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.findViewById<TextView>(R.id.contactName).text = args.contact.name
+        view.findViewById<TextView>(R.id.contactNumber).text = args.contact.phoneNumber
+        view.findViewById<TextView>(R.id.contactDescription).text = args.contact.description
+
         view.findViewById<Button>(R.id.button_back).setOnClickListener {
             findNavController().popBackStack()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("LIFE_CYCLE", "Fragment 2 onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("LIFE_CYCLE", "Fragment 2 onPause")
-    }
-
-    override fun onDetach() {
-        Log.d("LIFE_CYCLE", "Fragment 2 onDetach")
-        super.onDetach()
     }
 }

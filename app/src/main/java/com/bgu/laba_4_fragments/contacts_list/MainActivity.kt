@@ -1,8 +1,9 @@
-package com.bgu.laba_4_fragments
+package com.bgu.laba_4_fragments.contacts_list
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.bgu.laba_4_fragments.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,5 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d("LIFE_CYCLE", "MainActivity 1 onDestroy")
     }
-
-    app://laba4/fragment2
 
 }
