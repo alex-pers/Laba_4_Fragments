@@ -6,14 +6,20 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.bgu.laba_4_fragments.Fragment1"
+        android:name="com.bgu.laba_4_fragments.contacts_list.ContactsListFragment"
         android:label="Fragment1">
         <action
             android:id="@+id/to_fragment2"
             app:destination="@id/fragment2" />
     </fragment>
+
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.bgu.laba_4_fragments.Fragment2"
-        android:label="Fragment2" />
+        android:name="com.bgu.laba_4_fragments.ContactDescriptionFragment"
+        android:label="Fragment2" >
+
+        <argument
+            android:name="contact"
+            app:argType="com.bgu.laba_4_fragments.model.Contact" />
+    </fragment>
 </navigation>
