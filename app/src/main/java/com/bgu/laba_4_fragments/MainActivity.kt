@@ -1,4 +1,4 @@
-package com.bgu.laba_4_fragments.contacts_list
+package com.bgu.laba_4_fragments
 
 import android.os.Bundle
 import android.util.Log

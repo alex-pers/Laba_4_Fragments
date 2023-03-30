@@ -21,11 +21,6 @@ class ContactsListFragment : Fragment(), ContactsFragmentContract.View,
 
     lateinit var contactsAdapter: ContactsRecyclerViewAdapter
 
-    override fun onAttach(activity: Context) {
-        super.onAttach(activity)
-        Log.d("LIFE_CYCLE", "Fragment 1 onAttach")
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

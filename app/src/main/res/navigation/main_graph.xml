@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_graph"
-    app:startDestination="@id/fragment1">
+    app:startDestination="@id/contactsViewPagerFragment">
 
     <fragment
         android:id="@+id/fragment1"
@@ -16,10 +16,19 @@
     <fragment
         android:id="@+id/fragment2"
         android:name="com.bgu.laba_4_fragments.ContactDescriptionFragment"
-        android:label="Fragment2" >
+        android:label="Fragment2">
 
         <argument
             android:name="contact"
             app:argType="com.bgu.laba_4_fragments.model.Contact" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactsViewPagerFragment"
+        android:name="com.bgu.laba_4_fragments.contacts_list.view_pager_impl.ContactsViewPagerFragment"
+        android:label="ContactsViewPagerFragment">
+        <action
+            android:id="@+id/action_contactsViewPagerFragment_to_fragment2"
+            app:destination="@id/fragment2" />
     </fragment>
 </navigation>

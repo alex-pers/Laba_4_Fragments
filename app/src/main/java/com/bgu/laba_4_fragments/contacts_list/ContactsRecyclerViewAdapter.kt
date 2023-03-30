@@ -41,7 +41,6 @@ class ContactsRecyclerViewAdapter(
         holder.updateContact(contact)
     }
 
-
     class ContactViewHolder(
         itemView: View,
         private val onContactClickListener: OnContactSelected,
