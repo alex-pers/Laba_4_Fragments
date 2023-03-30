@@ -5,7 +5,6 @@ import com.bgu.laba_4_fragments.model.Contact
 class ContactsFragmentContract {
 
     open interface View {
-
         fun showContacts(contacts: List<Contact>)
         fun setActionListener(actionListener: ActionListener)
     }
@@ -19,7 +18,6 @@ class ContactsFragmentContract {
     }
 
     interface Presenter : ActionListener {
-
         fun bindView(view: View)
         fun unbindView()
     }
