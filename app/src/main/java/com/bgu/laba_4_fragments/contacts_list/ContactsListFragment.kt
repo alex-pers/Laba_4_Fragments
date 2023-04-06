@@ -22,7 +22,10 @@ class ContactsListFragment : Fragment(), ContactsFragmentContract.View,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        presenter = ContactsPresenter(requireContext(), RouterImpl(findNavController()))
+        presenter = ContactsPresenter(
+            requireContext(),
+            RouterImpl(findNavController()),
+            )
 
         contactsAdapter = ContactsRecyclerViewAdapter(requireContext(), this)
     }
