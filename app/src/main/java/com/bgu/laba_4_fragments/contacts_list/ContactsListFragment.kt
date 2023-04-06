@@ -1,8 +1,6 @@
 package com.bgu.laba_4_fragments.contacts_list
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,7 +59,12 @@ class ContactsListFragment : Fragment(), ContactsFragmentContract.View,
         this.actionListener = actionListener
     }
 
+    override fun setLastContactId(id: Int) {
+        contactsAdapter.updateLastSelected(id)
+    }
+
     override fun onContactClicked(contact: Contact) {
         actionListener?.onContactClicked(contact)
+        contactsAdapter.updateLastSelected(contact.id)
     }
 }

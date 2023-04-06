@@ -7,6 +7,7 @@ class ContactsFragmentContract {
     open interface View {
         fun showContacts(contacts: List<Contact>)
         fun setActionListener(actionListener: ActionListener)
+        fun setLastContactId(id: Int)
     }
 
     interface Router {

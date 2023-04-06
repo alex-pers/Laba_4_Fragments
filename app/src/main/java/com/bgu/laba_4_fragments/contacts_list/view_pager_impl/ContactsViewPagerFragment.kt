@@ -76,4 +76,7 @@ class ContactsViewPagerFragment : Fragment(), ContactsFragmentContract.View {
     override fun setActionListener(actionListener: ContactsFragmentContract.ActionListener) {
         this.actionListener = actionListener
     }
+
+    override fun setLastContactId(id: Int) {
+    }
 }
